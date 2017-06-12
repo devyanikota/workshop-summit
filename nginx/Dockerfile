@@ -2,7 +2,8 @@ FROM centos
 
 ADD nginx.repo /etc/yum.repos.d/
 
-RUN yum update -y && yum install -y nginx
+RUN yum update -y && yum clean all
+RUN yum install -y nginx
 
 RUN mkdir -p /nginx
 ADD nginx.sh /nginx/
